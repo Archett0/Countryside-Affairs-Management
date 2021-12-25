@@ -11,15 +11,13 @@ import CoursesManage from "@/pages/CoursesManage.vue";
 import CourseTypeManage from "@/pages/CourseTypeManage.vue";
 import ElectionTypeManagement from "../pages/ElectionTypeManagement";
 import Cockpit from "../pages/Cockpit";
-import CopeMatter from "@/pages/CopeMatter.vue";
+import CopeMatter from "../pages/HospitalPage/CopeMatter";
 import HospitalCrowdedSituation from "../pages/HospitalPage/HospitalCrowdedSituation";
 import HospitalCrowdedSituation2 from "../pages/HospitalPage/HospitalCrowdedSituation2.vue";
-import addAddress from "../components/Hospital/addAddress.vue";
 import checkInf from "../components/Hospital/checkInf.vue";
 import CheckInformation from "../components/Hospital/CheckInformation.vue";
 import AskOnlineDetail from "../components/Hospital/AskOnlineDetail.vue";
 import AppointmentDetail from "../components/Hospital/AppointmentDetail.vue";
-import CrowdChart from "../components/Hospital/CrowdChart.vue";
 import HotelAppointment from "../pages/HotelPage/HotelAppointment.vue";
 import HotelRoomManage from "../pages/HotelPage/HotelRoomManage.vue";
 import HotelCope from "../pages/HotelPage/HotelCope.vue";
@@ -34,6 +32,8 @@ import BusLineList from "../pages/BusLineList.vue";
 import BusLineMapC from "../pages/BusLineMapC.vue";
 import AllBusStopList from "../pages/AllBusStopList.vue";
 import UserManage from "../pages/UserManage";
+import AllStopMap from "../pages/AllStopMap";
+import OneStopMap from "../pages/OneStopMap";
 
 
 const routes = [
@@ -53,7 +53,7 @@ const routes = [
         children: [
             {
                 path: "dashboard",
-                name: "驾驶舱",
+                name: "主页",
                 component: Dashboard,
             },
             // {
@@ -97,6 +97,11 @@ const routes = [
                 name: "快递已完成工单界面",
                 component: FinishedDelivery,
             },
+            {
+                path: "fix-my-order",
+                name: "报修我的工单界面",
+                component: FixingMyOrderList,
+            },
 
             {
                 path: "RestBusiness",
@@ -114,10 +119,14 @@ const routes = [
                 component: CoursesManage,
             },
             {
-
                 path: "HotelAppointment",
                 name: "HotelAppointment",
                 component: HotelAppointment,
+            },
+            {
+                path: "appointmentDetail",
+                name: "AppointmentDetail",
+                component: AppointmentDetail,
             },
             {
                 path: "HotelRoomManage",
@@ -153,22 +162,6 @@ const routes = [
                 component: FixingOrderList,
             },
             {
-                path: "CrowdChart",
-                name: "CrowdChart",
-                component: CrowdChart,
-            },
-            {
-
-                path: "fix-my-order",
-                name: "报修我的工单",
-                component: FixingMyOrderList,
-            },
-            {
-                path: "AppointmentDetail",
-                name: "AppointmentDetail",
-                component: AppointmentDetail,
-            },
-            {
 
                 path: "post-election",
                 name: "选举发布界面",
@@ -178,17 +171,6 @@ const routes = [
                 path: "checkInf",
                 name: "checkInf",
                 component: checkInf,
-            },
-            {
-
-                path: "election-list",
-                name: "选举信息概览",
-                component: ElectionList,
-            },
-            {
-                path: "CheckInformation",
-                name: "CheckInformation",
-                component: CheckInformation,
             },
             {
                 path: "HospitalCrowdedSituation",
@@ -201,11 +183,6 @@ const routes = [
                 component: HospitalCrowdedSituation2,
             },
             {
-                path: "add-address",
-                name: "增加地名",
-                component: addAddress,
-            },
-            {
                 path: "CopeMatter",
                 name: "处理网上问诊",
                 component: CopeMatter,
@@ -214,6 +191,21 @@ const routes = [
                 path: "buslinemapc",
                 name: "公交地图",
                 component: BusLineMapC,
+            },
+            {
+                path: "election-list",
+                name: "选举信息概览",
+                component: ElectionList,
+            },
+            {
+                path: "CheckInformation",
+                name: "CheckInformation",
+                component: CheckInformation,
+            },
+            {
+                path: "CopeMatter",
+                name: "医生业务处理",
+                component: CopeMatter,
             },
             {
                 path: "busstoplist",
@@ -230,10 +222,18 @@ const routes = [
                 name: "公交路线",
                 component: BusLineList,
             },
-
+            {
+                path: "stopmap",
+                name:"车站地图",
+                component: AllStopMap,
+            },
+            {
+                path: "onestopmap",
+                name:"车站位置",
+                component: OneStopMap,
+            }
         ],
     },
-
 ];
 
 export default routes;
